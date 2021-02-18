@@ -1,10 +1,8 @@
-
+require 'web_helper'
 feature 'Enter names' do
+    @hit_points = Battle::HIT_POINTS
     scenario 'submitting names' do
-        visit('/')
-        fill_in :player_1_name, with: "Nabonidus"
-        fill_in :player_2_name, with: 'Sargon of Akkad'
-        click_button 'Submit'
-        expect(page).to have_content "Nabonidus vs. Sargon of Akkad"
+        sign_in_and_play
+        expect(page).to have_content "Ash vs. Gary Gary #{@hit_points} HP"
     end
 end

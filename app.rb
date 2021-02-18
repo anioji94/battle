@@ -2,7 +2,8 @@ require 'sinatra/base'
 
 class Battle < Sinatra::Base
 enable :sessions
-  
+HIT_POINTS = 60
+
     get '/' do
         erb :index
     end
@@ -16,6 +17,7 @@ enable :sessions
 		get '/play' do
 				@player_1_name = session[:player_1_name]
 				@player_2_name = session[:player_2_name]
+        @hit_points = HIT_POINTS
         erb :play
 		end
 
