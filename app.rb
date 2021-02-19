@@ -2,7 +2,6 @@ require 'sinatra/base'
 require_relative './lib/player.rb'
 class Battle < Sinatra::Base
 enable :sessions
-HIT_POINTS = 60
 
     get '/' do
         erb :index
@@ -17,7 +16,7 @@ HIT_POINTS = 60
 		get '/play' do
 				@player_1_name = $player_1.name
 				@player_2_name = $player_2.name
-        @hit_points = HIT_POINTS
+        # @hit_points = HIT_POINTS
         erb :play
 		end
 
