@@ -6,7 +6,7 @@ feature 'Enter names' do
 				@hit_points = Battle::HIT_POINTS # Works here?
         sign_in_and_play
 				p @hit_points
-				save_and_open_page
+			
         expect(page).to have_content "Ash vs. Gary Gary #{@hit_points} HP"
     end
 end
